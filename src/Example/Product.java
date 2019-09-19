@@ -46,6 +46,11 @@ public class Product
             System.out.println(p2.name + "가 더 저렴합니다.");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
+    }
 }
 
 class ioHandler

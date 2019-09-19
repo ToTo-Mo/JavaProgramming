@@ -4,6 +4,7 @@ public class DeskLamp
 {
     private boolean isOn;
 
+    
     public void turnOn()
     {
         isOn = true;
