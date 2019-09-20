@@ -51,6 +51,20 @@ public class Date
         date.print();
     }
 
+    public Date(int y,int m,int d)
+    {
+        year =y;
+        month =m;
+        day =d;
+    }
 
+    public Date(int y)
+    {
+        this(y,1,1);
+    }
+
+    public Date() {
+        this(2010,1,1);
+    }
 
 }

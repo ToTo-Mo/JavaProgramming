@@ -1,4 +1,4 @@
-package InnerClass;
+package Syntax.InnerClass;
 
 public class OuterClass {
 	

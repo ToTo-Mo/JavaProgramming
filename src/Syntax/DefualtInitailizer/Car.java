@@ -1,4 +1,4 @@
-package DefualtInitailizer;
+package Syntax.DefualtInitailizer;
 
 public class Car {
     private int speed;
