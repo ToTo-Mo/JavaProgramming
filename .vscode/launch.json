@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayOperation",
+            "request": "launch",
+            "mainClass": "Task.ArrayOperation",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MultiDimension",
+            "request": "launch",
+            "mainClass": "Syntax.Array.MultiDimension",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Copy",
+            "request": "launch",
+            "mainClass": "Syntax.Array.Copy",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BinarySearch",
+            "request": "launch",
+            "mainClass": "Syntax.Array.BinarySearch",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Sorting",
+            "request": "launch",
+            "mainClass": "Syntax.Array.Sorting",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayDeclaration",
             "request": "launch",
             "mainClass": "Syntax.Array.ArrayDeclaration",
