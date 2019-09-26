@@ -5,10 +5,13 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.PreparedStatement;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
+
+import Utility.DBConnection;
 
 
 public class LoginView extends JFrame {
@@ -20,7 +23,6 @@ public class LoginView extends JFrame {
     private JTextField userText;
     private JLabel loginImage;
     private boolean bLoginCheck;
-
     public static void main(String[] args) {
         // new LoginView();
     }
@@ -111,6 +113,10 @@ public class LoginView extends JFrame {
     }
    
     public void isLoginCheck(){
+        
+        PreparedStatement st;
+        String query = "";
+
         if(userText.getText().equals("test") && new String(passText.getPassword()).equals("1234")){
             JOptionPane.showMessageDialog(null, "Success");
             bLoginCheck = true;
