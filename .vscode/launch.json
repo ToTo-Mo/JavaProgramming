@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MainView",
+            "request": "launch",
+            "mainClass": "GUI.MainView",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayOperation",
             "request": "launch",
             "mainClass": "Task.ArrayOperation",
