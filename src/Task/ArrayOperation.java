@@ -3,56 +3,82 @@ package Task;
 import java.util.Random;
 
 public class ArrayOperation{
-    public static final int row = 3,column = 4;
-
     public static void main(String[] args){
-        int[][] A = new int[row][column];
-        int[][] B = new int[row][column];
+        IOHandler ioh = new IOHandler();
 
-        init_random(A);
-        init_random(B);
+        Matrix A = new Matrix(3, 3), B = new Matrix(3,3);
 
-        print("배열 A",A);
-        print("배열 B",B);
 
-        int[][] C = add(A,B);
+        ioh.print("행렬 A",A);
+        ioh.print("행렬 B",B);
 
-        print("결과",C);
+        Matrix C = add(A,B);
+
+        ioh.print("덧셈",C);
 
     }
 
-    public static int[][] add(int[][] A,int[][] B)
+    public static Matrix add(Matrix A, Matrix B)
     {
-        int[][] C = new int[A.length][A[0].length];
+        int row = A.getMatrix().length;
+        int col = A.getMatrix()[0].length;
+        int[][] temp = new int[row][col];
 
-        for(int i=0; i<A.length; i++){
-            for(int j=0; j<A[i].length; j++){
-                C[i][j] = A[i][j] + B[i][j];
+        for(int i=0; i<row; i++){
+            for(int j=0; j<row; j++){
+                temp[i][j] = A.getMatrix()[i][j] + B.getMatrix()[i][j];
             }
         }
 
-        return C;
+        return new Matrix(temp);
     }
-    public static void print(String sentence,int[][] array)
+}
+
+class IOHandler{
+    public void print(String sentence,Matrix M)
     {
         System.out.println(sentence);
 
-        for(int[] arr : array){
-            for(int elem : arr){
-                System.out.print(elem+ " ");
+        for(int[] row : M.getMatrix()){
+            for(int elem : row){
+                System.out.print(elem + " ");
             }
             System.out.println();
         }
 
         System.out.println();
     }
+}
 
-    public static void init_random(int[][] array){
+class Matrix
+{
+    private int[][] matrix;
+
+    public Matrix(int r, int c){
+        matrix = new int[r][c];
+        init_random();
+    }
+    public Matrix(int[][] matrix)
+    {
+        this.matrix = matrix.clone();
+
+        for(int i=0; i<matrix.length; i++)
+            this.matrix[i] = matrix[i].clone();
+    }
+
+    public int[][] getMatrix(){
+        return matrix;
+    }
+    public void setMatrix(int i, int j, int value){
+        matrix[i][j] = value;
+    }
+
+    public void init_random(){
         Random random = new Random();
 
-        for(int i=0; i<array.length; i++){
-            for(int j=0; j<array[i].length; j++){
-                array[i][j] = random.nextInt(100);
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[i].length; j++){
+                matrix[i][j] = random.nextInt(100);
             }
         }
     }

@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StringOperation",
+            "request": "launch",
+            "mainClass": "Example.StringOperation",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Builder",
+            "request": "launch",
+            "mainClass": "Syntax.String.Builder",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Format",
+            "request": "launch",
+            "mainClass": "Syntax.String.Format",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Regrex",
+            "request": "launch",
+            "mainClass": "Syntax.Regrex.Regrex",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StringOperation",
+            "request": "launch",
+            "mainClass": "Task.StringOperation",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Split",
+            "request": "launch",
+            "mainClass": "Syntax.String.Split",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Compare",
+            "request": "launch",
+            "mainClass": "Syntax.String.Compare",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Jagged",
+            "request": "launch",
+            "mainClass": "Syntax.Array.Jagged",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Program",
             "request": "launch",
             "mainClass": "Task.Program",
