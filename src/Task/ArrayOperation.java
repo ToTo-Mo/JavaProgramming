@@ -11,38 +11,55 @@ public class ArrayOperation{
 
         ioh.print("행렬 A",A);
         ioh.print("행렬 B",B);
-
-        Matrix C = add(A,B);
-
-        ioh.print("덧셈",C);
-
+        
+        ioh.print("덧셈",add(A,B));
+        ioh.print("뺄셈",sub(A,B));
+        ioh.print("곱셈",mul(A,B));
     }
+    public static Matrix mul(Matrix A, Matrix B){
+        int row = A.getMatrix().length;
+        int col = B.getMatrix()[0].length;
+        int[][] temp = new int[row][col];
 
-    public static Matrix add(Matrix A, Matrix B)
-    {
+        for(int i=0; i<row; i++)
+            for( int j = 0; j<col; j++)
+                for( int k=0; k<A.getMatrix()[0].length; k++)
+                    temp[i][j] += A.getMatrix()[i][k] * B.getMatrix()[k][j];
+
+        return new Matrix(temp);
+    }
+    public static Matrix sub(Matrix A, Matrix B){
         int row = A.getMatrix().length;
         int col = A.getMatrix()[0].length;
         int[][] temp = new int[row][col];
 
-        for(int i=0; i<row; i++){
-            for(int j=0; j<row; j++){
+        for(int i=0; i<row; i++)
+            for(int j=0; j<col; j++)
+                temp[i][j] = A.getMatrix()[i][j] - B.getMatrix()[i][j];
+
+        return new Matrix(temp);
+    }
+    public static Matrix add(Matrix A, Matrix B){
+        int row = A.getMatrix().length;
+        int col = A.getMatrix()[0].length;
+        int[][] temp = new int[row][col];
+
+        for(int i=0; i<row; i++)
+            for(int j=0; j<col; j++)
                 temp[i][j] = A.getMatrix()[i][j] + B.getMatrix()[i][j];
-            }
-        }
 
         return new Matrix(temp);
     }
 }
 
 class IOHandler{
-    public void print(String sentence,Matrix M)
-    {
+    public void print(String sentence,Matrix M){
         System.out.println(sentence);
 
         for(int[] row : M.getMatrix()){
-            for(int elem : row){
+            for(int elem : row)
                 System.out.print(elem + " ");
-            }
+            
             System.out.println();
         }
 
@@ -65,21 +82,17 @@ class Matrix
         for(int i=0; i<matrix.length; i++)
             this.matrix[i] = matrix[i].clone();
     }
-
     public int[][] getMatrix(){
         return matrix;
     }
     public void setMatrix(int i, int j, int value){
         matrix[i][j] = value;
     }
-
     public void init_random(){
         Random random = new Random();
 
-        for(int i=0; i<matrix.length; i++){
-            for(int j=0; j<matrix[i].length; j++){
-                matrix[i][j] = random.nextInt(100);
-            }
-        }
+        for(int i=0; i<matrix.length; i++)
+            for(int j=0; j<matrix[i].length; j++)
+                matrix[i][j] = random.nextInt(10);
     }
 }
