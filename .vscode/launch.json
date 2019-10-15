@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - g",
+            "request": "launch",
+            "mainClass": "problem.g",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TypeCasting",
+            "request": "launch",
+            "mainClass": "Syntax.Interface.TypeCasting",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TypeCasting",
+            "request": "launch",
+            "mainClass": "Example.TypeCasting",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Anonymous",
+            "request": "launch",
+            "mainClass": "Syntax.AnonymousClass.Anonymous",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Syntax.InheritanceNBinding.Test",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Child",
+            "request": "launch",
+            "mainClass": "Example.Child",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Employee",
+            "request": "launch",
+            "mainClass": "Example.Employee",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Child",
             "request": "launch",
             "mainClass": "Syntax.Inheritance.Child",
