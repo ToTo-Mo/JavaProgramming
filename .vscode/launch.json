@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayListTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.ArrayList.ArrayListTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TreeSetTest",
+            "request": "launch",
+            "mainClass": "Syntax.Set.TreeSetTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HashSetTest",
+            "request": "launch",
+            "mainClass": "Syntax.Set.HashSetTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UserExceptionTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.UserExceptionTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Program",
             "request": "launch",
             "mainClass": "Task.ExtendsAndException.Program",
