@@ -15,14 +15,7 @@ public class g{
 
         temp = input.nextLine();
         String elem_st = temp.split(" ")[0], elem_end = temp.split(" ")[1];
-
-        int result_size = fact(in_num) / fact(in_num - elem_num);
-        String[] result = new String[result_size];
-
-        result[0] = elem_st;
-        result[9] = elem_end;
-
-        for(int i=1; i<result_size-1; i++)
+ 
         {   
 
         }

@@ -1,5 +1,6 @@
 package Syntax.Array;
 
+
 import Syntax.Finalize.Cat;
 
 public class ArrayDeclaration
