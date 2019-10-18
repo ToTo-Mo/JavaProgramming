@@ -29,7 +29,7 @@ public class DataIOStream {
             char c;
             while (dis.available() > 0) { // 남아있는 바이트수 검사
                 c = dis.readChar();
-                System.out.print(c);ㄴㄴ
+                System.out.print(c);
             }
         } catch (IOException e) {
             e.printStackTrace();
