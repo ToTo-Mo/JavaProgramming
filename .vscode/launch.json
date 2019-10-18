@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
+            "mainClass": "Task.StudentManager.Program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BufferIOStream",
             "request": "launch",
             "mainClass": "Syntax.Stream.BufferStream.BufferIOStream",

@@ -8,7 +8,6 @@ public class ArrayOperation{
 
         Matrix A = new Matrix(3, 3), B = new Matrix(3,3);
 
-
         ioh.print("행렬 A",A);
         ioh.print("행렬 B",B);
         
