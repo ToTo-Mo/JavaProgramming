@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BufferIOStream",
+            "request": "launch",
+            "mainClass": "Syntax.Stream.BufferStream.BufferIOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileReaderWriter",
+            "request": "launch",
+            "mainClass": "Syntax.Stream.CharacterStream.FileReaderWriter",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IOStream",
+            "request": "launch",
+            "mainClass": "Syntax.Stream.CharacterStream.IOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DataIOStream",
             "request": "launch",
             "mainClass": "Syntax.ByteStream.DataIOStream.DataIOStream",

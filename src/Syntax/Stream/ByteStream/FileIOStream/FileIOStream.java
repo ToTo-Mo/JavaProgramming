@@ -1,4 +1,4 @@
-package Syntax.ByteStream.FileIOStream;
+package Syntax.Stream.ByteStream.FileIOStream;
 
 import java.io.*;
 
