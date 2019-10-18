@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MapTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.Map.MapTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UserDefinedPriorityQueue",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.List.Queue.UserDefinedPriorityQueue",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QueueTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.List.Queue.QueueTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedListTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.List.LinkedList.LinkedListTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayListTest",
             "request": "launch",
             "mainClass": "Syntax.Collection.ArrayList.ArrayListTest",

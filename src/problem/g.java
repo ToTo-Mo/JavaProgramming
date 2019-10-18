@@ -22,7 +22,7 @@ public class g{
 
     }
 
-    public static int fact(int n) {
+    public static long fact(int n) {
         long fact = 1;
         for (int i = 2; i <= n; i++) {
             fact = fact * i;
