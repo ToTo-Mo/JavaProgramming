@@ -35,6 +35,7 @@ public class Cat {
         System.out.println(c2.toString());
 
         try {
+            // 객체 할당 반환
             c.finalize();
         } catch (Throwable e) {
             // TODO Auto-generated catch block

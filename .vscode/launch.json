@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DataIOStream",
+            "request": "launch",
+            "mainClass": "Syntax.ByteStream.DataIOStream.DataIOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileIOStream",
+            "request": "launch",
+            "mainClass": "Syntax.Stream.ByteStream.FileIOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MapTest",
             "request": "launch",
             "mainClass": "Syntax.Collection.Map.MapTest",
