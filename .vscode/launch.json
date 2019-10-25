@@ -6,23 +6,156 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Car",
+            "name": "CodeLens (Launch) - Program",
             "request": "launch",
-            "mainClass": "Syntax.DefualtInitailizer.Car",
+            "mainClass": "Task.StudentManager.Program",
             "projectName": "src"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Server",
+            "name": "CodeLens (Launch) - BufferIOStream",
             "request": "launch",
-            "mainClass": "Task.RMI_IPC.Server",
+            "mainClass": "Syntax.Stream.BufferStream.BufferIOStream",
             "projectName": "src"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Client",
+            "name": "CodeLens (Launch) - FileReaderWriter",
             "request": "launch",
-            "mainClass": "Task.RMI_IPC.Client",
+            "mainClass": "Syntax.Stream.CharacterStream.FileReaderWriter",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IOStream",
+            "request": "launch",
+            "mainClass": "Syntax.Stream.CharacterStream.IOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DataIOStream",
+            "request": "launch",
+            "mainClass": "Syntax.ByteStream.DataIOStream.DataIOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileIOStream",
+            "request": "launch",
+            "mainClass": "Syntax.Stream.ByteStream.FileIOStream",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MapTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.Map.MapTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UserDefinedPriorityQueue",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.List.Queue.UserDefinedPriorityQueue",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QueueTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.List.Queue.QueueTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedListTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.List.LinkedList.LinkedListTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayListTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.ArrayList.ArrayListTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TreeSetTest",
+            "request": "launch",
+            "mainClass": "Syntax.Set.TreeSetTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HashSetTest",
+            "request": "launch",
+            "mainClass": "Syntax.Set.HashSetTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UserExceptionTest",
+            "request": "launch",
+            "mainClass": "Syntax.Collection.UserExceptionTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
+            "mainClass": "Task.ExtendsAndException.Program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - g",
+            "request": "launch",
+            "mainClass": "problem.g",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TypeCasting",
+            "request": "launch",
+            "mainClass": "Syntax.Interface.TypeCasting",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TypeCasting",
+            "request": "launch",
+            "mainClass": "Example.TypeCasting",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Anonymous",
+            "request": "launch",
+            "mainClass": "Syntax.AnonymousClass.Anonymous",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Syntax.InheritanceNBinding.Test",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Child",
+            "request": "launch",
+            "mainClass": "Example.Child",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Employee",
+            "request": "launch",
+            "mainClass": "Example.Employee",
             "projectName": "src"
         },
         {
