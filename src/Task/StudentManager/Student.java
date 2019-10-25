@@ -1,10 +1,10 @@
 package Task.StudentManager;
 
-public class Student implements Comparable<Student>{
-    String number, course, name, professor, address;
+public abstract class Student implements Comparable<Student>{
+    String number,course,name,professor,address;
     int year;
     double GPA;
-
+        
     public Student(String number, String course, String name, String professor, int year, String address, double GPA) {
         this.number = number;
         this.course = course;
@@ -15,7 +15,7 @@ public class Student implements Comparable<Student>{
         this.GPA = GPA;
     }
 
-    public String Name() {
+    public String Name(){
         return name;
     }
 
@@ -81,11 +81,7 @@ public class Student implements Comparable<Student>{
         this.course = course;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
-                GPA);
-    }
+    public abstract void show();
 
     @Override
     public int compareTo(Student s) {
@@ -97,7 +93,6 @@ public class Student implements Comparable<Student>{
             return 0;
     }
 
-    
     @Override
     public boolean equals(Object obj){
         return this.number == ((Student)obj).Number();

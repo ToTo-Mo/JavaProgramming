@@ -22,9 +22,9 @@ public class Graduate extends Student {
     }
 
     @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
-                GPA) + (major == null ? "" : ","+major);
+    public void show() {
+        System.out.println(String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
+        GPA) + (major == null ? "" : ","+major));
     }
 
 }

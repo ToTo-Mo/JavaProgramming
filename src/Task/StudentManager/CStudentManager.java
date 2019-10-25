@@ -54,14 +54,14 @@ public class CStudentManager {
 
     public void printStudent() {
         for (int i = 0; i < StudentList.size(); i++) {
-            System.out.println(StudentList.get(i).toString());
+            StudentList.get(i).show();
         }
     }
 
     public void searchByAdvisor(String advisorName) {
         for (Student std : StudentList) {
             if (std.Professor().equals(advisorName))
-                System.out.println(std.toString());
+                std.show();
         }
     }
 

@@ -21,8 +21,8 @@ public class Under extends Student {
     }
 
     @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
-                GPA) + (circle == null ? "" : ","+circle);
+    public void show() {
+        System.out.println(String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
+        GPA) + (circle == null ? "" : ","+circle)); 
     }
 }

@@ -66,10 +66,9 @@ public class Employee implements IEmployee {
         this.position = position;
     }
 
-    @Override
-    public String toString() {
-        return "Employee [name=" + name + ", company=" + company + ", address=" + address + ", department=" + department
-                + ", position=" + position + "]";
+    public void show() {
+        System.out.println("Employee [name=" + name + ", company=" + company + ", address=" + address + ", department=" + department
+        + ", position=" + position + "]");
     }
 }
 
@@ -130,9 +129,9 @@ class IndustryGraduate extends Graduate implements IEmployee {
     }
 
     @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
-                GPA) + (major != null ? ","+major : null)
-                + String.format(",%s,%s,%s", e.Company(), e.Department(), e.Position());
+    public void show() {
+        System.out.println(String.format("%s,%s,%s,%d,%s,%s,%2f", number, course, name, year, professor, address,
+        GPA) + (major != null ? ","+major : null)
+        + String.format(",%s,%s,%s", e.Company(), e.Department(), e.Position()));
     }
 }
