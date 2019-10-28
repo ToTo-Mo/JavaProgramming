@@ -1,4 +1,4 @@
-package Task;
+package Task.Student;
 
 import java.util.Arrays;
 import java.util.Scanner;
