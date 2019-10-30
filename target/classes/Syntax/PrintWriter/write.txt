@@ -1,0 +1,10 @@
+/* 1 */ int lineNumber = 1;
+/* 2 */ 		while (in.hasNextLine()){
+/* 3 */ 			String line = in.nextLine();
+/* 4 */ 			out.println("/* " + lineNumber + " */ " + line);
+/* 5 */ 			lineNumber++;
+/* 6 */ 		}
+/* 7 */ 		out.close();
+/* 8 */ 		System.out.println("작업을 성공적으로 마쳤습니다.");
+/* 9 */ 	} catch (Exception e) {
+/* 10 */ 		e.printStackTrace();
