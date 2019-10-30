@@ -8,6 +8,27 @@
             "type": "java",
             "name": "CodeLens (Launch) - Program",
             "request": "launch",
+            "mainClass": "Syntax.Serializable.Program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileTest",
+            "request": "launch",
+            "mainClass": "Syntax.File.FileTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "Task.Login.Client",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
             "mainClass": "Task.StudentManager.Program",
             "projectName": "src"
         },
