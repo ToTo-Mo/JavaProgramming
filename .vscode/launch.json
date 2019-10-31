@@ -8,6 +8,55 @@
             "type": "java",
             "name": "CodeLens (Launch) - Program",
             "request": "launch",
+            "mainClass": "Syntax.PrintWriter.Program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "Syntax.Scanner.Application",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileRead",
+            "request": "launch",
+            "mainClass": "Syntax.Scanner.FileRead",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
+            "mainClass": "Syntax.Scanner.Program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
+            "mainClass": "Syntax.Serializable.Program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FileTest",
+            "request": "launch",
+            "mainClass": "Syntax.File.FileTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Client",
+            "request": "launch",
+            "mainClass": "Task.Login.Client",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
             "mainClass": "Task.StudentManager.Program",
             "projectName": "src"
         },
