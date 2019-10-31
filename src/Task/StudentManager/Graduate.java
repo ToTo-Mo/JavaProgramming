@@ -3,14 +3,13 @@ package Task.StudentManager;
 public class Graduate extends Student {
     String major;
 
-    public Graduate(String number,String course, String name,  String professor,int year, String address, double GPA, String major) {
-        super(number, course,name, professor, year, address, GPA);
+    public Graduate(String number,String course, String name,  int year, String professor,String address, double GPA, String major) {
+        super(number, course,name, year,professor, address, GPA);
         this.major = major;
     }
 
-    public Graduate(String number, String course,String name,  String professor,int year, String address, double GPA) {
-        super(number, course,name, professor, year, address, GPA);
-
+    public Graduate(String number, String course,String name, int year,  String professor,String address, double GPA) {
+        super(number, course,name, year,professor, address, GPA);
     }
 
     public String Major() {

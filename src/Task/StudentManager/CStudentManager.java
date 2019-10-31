@@ -1,12 +1,7 @@
 package Task.StudentManager;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.io.*;
+import java.util.*;
 
 public class CStudentManager {
 
@@ -19,20 +14,22 @@ public class CStudentManager {
     public void insertStudent(String number, String course, String name, int year, String professor, String address,
             double GPA, String circleOrMajor) {
         if (course.equals("학부"))
-            StudentList.add(new Under(number, course, name, professor, year, address, GPA, circleOrMajor));
+            StudentList.add(new Under(number, course, name,  year,professor, address, GPA, circleOrMajor));
         else if (course.equals("대학원"))
-            StudentList.add(new Graduate(number, course, name, professor, year, address, GPA, circleOrMajor));
+            StudentList.add(new Graduate(number, course, name,  year, professor,address, GPA, circleOrMajor));
     }
 
     public void insertStudent(String number, String course, String name, int year, String professor, String address,
             double GPA) {
         if (course.equals("학부"))
-            StudentList.add(new Under(number, course, name, professor, year, address, GPA));
+            StudentList.add(new Under(number, course, name,  year, professor,address, GPA));
         else if (course.equals("대학원"))
-            StudentList.add(new Graduate(number, course, name, professor, year, address, GPA));
+            StudentList.add(new Graduate(number, course, name,  year, professor,address, GPA));
     }
 
-    public void insertStudent(Student newStudnet) {
+    private void insertStudent(String number, String course, String name, int year,String professor,
+            String address, double GPA, String major, String company, String department, String position) {
+            StudentList.add(new IndustryGraduate(number, course, name, year, professor, address, GPA, major, company, department, position));
     }
 
     public void deleteStudent(String number) {
@@ -70,6 +67,8 @@ public class CStudentManager {
             BufferedReader in = new BufferedReader(new FileReader(fileName));
 
             ArrayList<String[]> studentList = new ArrayList<String[]>();
+            //빠른 IO처리를 위해 임시로 저장해둘 공간
+
             String line = "";
             while ((line = in.readLine()) != null) {
                 String[] content = line.split(",");
@@ -77,24 +76,21 @@ public class CStudentManager {
             }
 
             for (String[] content : studentList) {
-                if (content[1].equals("학부") || content[1].equals("대학원")) {
-                    if (content.length == 8)
-                        this.insertStudent(content[0], content[1], content[2], Integer.parseInt(content[3]), content[4],
-                                content[5], Double.parseDouble(content[6]), content[7]);
+                if (content.length == 8)
+                    this.insertStudent(content[0], content[1], content[2], Integer.parseInt(content[3]), content[4],
+                            content[5], Double.parseDouble(content[6]), content[7]);
 
-                    if (content.length == 7)
-                        this.insertStudent(content[0], content[1], content[2], Integer.parseInt(content[3]), content[4],
-                                content[5], Double.parseDouble(content[6]));
+                else if (content.length == 7)
+                    this.insertStudent(content[0], content[1], content[2], Integer.parseInt(content[3]), content[4],
+                            content[5], Double.parseDouble(content[6]));
 
-                } else if (content[1].equals("산업대학원")) {
-                    StudentList.add(new IndustryGraduate(content[0], content[1], content[2],
-                            Integer.parseInt(content[3]), content[4], content[5], Double.parseDouble(content[6]),
-                            content[7], content[8], content[9], content[10]));
-                }
-
-                in.close();
+                else
+                    this.insertStudent(content[0], content[1], content[2], Integer.parseInt(content[3]), content[4], 
+                            content[5], Double.parseDouble(content[6]), content[7], content[8], content[9],
+                            content[10]);
             }
 
+            in.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

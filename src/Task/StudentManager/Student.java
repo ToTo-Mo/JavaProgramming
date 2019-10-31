@@ -5,7 +5,7 @@ public abstract class Student implements Comparable<Student>{
     int year;
     double GPA;
         
-    public Student(String number, String course, String name, String professor, int year, String address, double GPA) {
+    public Student(String number, String course, String name,  int year,String professor, String address, double GPA) {
         this.number = number;
         this.course = course;
         this.name = name;

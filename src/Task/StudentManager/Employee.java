@@ -90,14 +90,12 @@ interface IEmployee {
 class IndustryGraduate extends Graduate implements IEmployee {
     Employee e;
 
-    public IndustryGraduate(String number, String course, String name, int year, String professor, String address,
+    public IndustryGraduate(String number, String course, String name,int year, String professor,  String address,
             double GPA, String major, String company, String department, String position) {
-        super(number, course, name, professor, year, address, GPA, major);
+        super(number, course, name, year, professor, address, GPA, major);
         e = new Employee(company, department, position);
     }
 
-    //// 이렇게 구현을 한다 즉 직접적인 구현이라기 보다 인터페이스로 연결되어 이미 선언된 메소드를 가져온다 진짜 자바 병신 ㅇㅈ? ㅇ ~
-    //// ㅇㅈㅇㅈ
     public String Company() {
         return e.Company();
     }
