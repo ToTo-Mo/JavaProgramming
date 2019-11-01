@@ -6,6 +6,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Synchronize",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.Synchronize",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Yield",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.Yield",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - interrupt",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.interrupt",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - join",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.join",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - create_thread_from_Thread",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.create_thread_from_Thread",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - multi_thread",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.multi_thread",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - program",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - program",
+            "request": "launch",
+            "mainClass": "Syntax.Process.program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Server",
+            "request": "launch",
+            "mainClass": "Task.Login.Server",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Program",
             "request": "launch",
             "mainClass": "Syntax.PrintWriter.Program",
