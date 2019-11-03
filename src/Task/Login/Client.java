@@ -1,70 +1,86 @@
 package Task.Login;
 
 import java.io.*;
-import java.nio.*;
 import java.net.*;
 
-public class Client{
+public class Client {
 
     public final static String IP = "localhost";
     public final static int PORT = 3000;
 
     public static void main(String[] args) throws IOException {
-        
+
         Socket socket = new Socket(IP, PORT);
 
-        OutputStream out = socket.getOutputStream();
-        InputStream in = socket.getInputStream();
+        OutputStream writer = socket.getOutputStream();
+        InputStream reader = socket.getInputStream();
 
         Protocol protocol = new Protocol();
         byte[] buf = protocol.getPacket(); // 기본 버퍼 사이즈를 1000으로 할당
 
         while (true) {
-            in.read(buf);
+            reader.read(buf);
             int packetType = buf[0];
-            protocol.setPacket(packetType, buf);
+            int code = buf[1];
+            protocol.setPacket(packetType, code, buf);
+
             if (packetType == Protocol.PT_EXIT) {
                 System.out.println("클라이언트 종료");
                 break;
             }
 
-            BufferedReader userIn = new BufferedReader(new InputStreamReader(System.in));
             switch (packetType) {
-                case Protocol.PT_REQ:
-                    
-                    System.out.println("서버가 ID 요청");
+            case Protocol.PT_REQ:
+                BufferedReader userIn = new BufferedReader(new InputStreamReader(System.in));
+
+                if (code == Protocol.PT_REQ_ID) {
+                    protocol = new Protocol(Protocol.PT_RES, Protocol.PT_RES_ID);
+
+                    String id;
                     System.out.print("아이디 : ");
-                    String id = userIn.readLine();
-                    protocol = new Protocol(Protocol.PT_RES_ID);
+                    while((id = userIn.readLine()).length() > Protocol.LEN_LOGIN_ID){
+                        System.out.println("길이 초과!!.");
+                        System.out.print("아이디 : ");
+                    }
+
                     protocol.setId(id);
-                    out.write(protocol.getPacket());
-                    System.out.println("ID 정보 전송");
-                    break;
+                    writer.write(protocol.getPacket());
 
-                case Protocol.PT_ID_RESULT:
-                    String result = protocol.getIDResult();
-                    if(result == "1")
-                        System.out.println("아이디 확인");
-                    else if(result == "2")
-                        System.out.println("아이디 없음");
-                    break;
+                } else if (code == Protocol.PT_REQ_PW) {
+                    String pw;
+                    System.out.print("비밀번호 : ");
+                    while((pw = userIn.readLine()).length() > Protocol.LEN_LOGIN_PW){
+                        System.out.println("길이 초과!!");
+                        System.out.print("비밀번호 : ");
+                    }
 
-                case Protocol.PT_REQ_PW:
-                    System.out.println("서버가 PW 요청");
-                    System.out.print("암호 : ");
-                    String pwd = userIn.readLine();
-                    protocol.setPassword(pwd);
-                    System.out.println("PW 정보 전송");
-                    out.write(protocol.getPacket());
-                    break;
+                    protocol = new Protocol(Protocol.PT_RES, Protocol.PT_RES_PW);
+                    String password = userIn.readLine();
+                    protocol.setPassword(password);
+                    writer.write(protocol.getPacket());
+                }
+                break;
 
-                case Protocol.PT_RES_PW:
-                    System.out.println("비밀번호 확인");
-                    break;
+            case Protocol.PT_RESULT:
+                if (code == Protocol.PT_RESULT_ID_SUCCESS)
+                    System.out.println("아이디 확인");
+
+                else if (code == Protocol.PT_RESULT_ID_FAIL)
+                    System.out.println("아이디 없음");
+
+                else if (code == Protocol.PT_RESULT_PW_SUCCESS) {
+                    System.out.println("로그인 완료");
+                    protocol = new Protocol(Protocol.PT_EXIT);
+                    writer.write(Protocol.PT_EXIT);
+
+                } else if (code == Protocol.PT_RESULT_PW_FAIL)
+                    System.out.println("비밀번호 불일치");
+            
+                break;
             }
-            out.close();
-            in.close();
-        socket.close();
         }
+        writer.close();
+        reader.close();
+        socket.close();
     }
 }

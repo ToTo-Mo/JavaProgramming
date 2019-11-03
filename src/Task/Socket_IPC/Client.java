@@ -8,14 +8,12 @@ public class Client {
         try {
         /* make connection to server socket */
         Socket sock = new Socket("127.0.0.1",6013);
-        InputStream in = sock.getInputStream();
-        BufferedReader bin = new
-        BufferedReader(new InputStreamReader(in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 
         System.out.println("클라이언트 서버 연결 성공");
         /* read the date from the socket */
         String line;
-        while ( (line = bin.readLine()) != null)
+        while ( (line = reader.readLine()) != null)
         System.out.println(line);
         /* close the socket connection*/
         sock.close();
