@@ -27,16 +27,19 @@ public class Server {
 		reader = socket.getInputStream();
 	}
 
+	//로그인 완료후 종료
 	public void stopServer() throws IOException {
 		send(Protocol.PT_EXIT);
 		System.out.println("서버종료");
 	}
 
+	//로그인 실패로 인한 종료
 	public void stopClient() throws IOException {
 		send(Protocol.PT_EXIT);
 		System.out.println("클라이언트 연결 종료");
 	}
 
+	//ID 확인
 	public void checkID(String id) throws IOException {
 		System.out.println("[" + socket.getLocalSocketAddress() + "][ID 확인 요청] : " + id);
 
@@ -54,6 +57,7 @@ public class Server {
 		}
 	}
 
+	//PASSWORD 확인
 	public void checkPW(String password) throws IOException {
 		System.out.println("[" + socket.getLocalSocketAddress() + "][PASSWORD 확인 요청] : " + password);
 
@@ -71,16 +75,19 @@ public class Server {
 		}
 	}
 
+	//패킷 전송 
 	public void send(int protocolType, int code) throws IOException {
 		protocol = new Protocol(protocolType, code);
 		writer.write(protocol.getPacket());
 	}
 
+	//패킷 전송
 	public void send(int protocolType) throws IOException {
 		protocol = new Protocol(protocolType);
 		writer.write(protocol.getPacket());
 	}
 
+	//패킷 수신
 	public void receive() throws IOException {
 		protocol = new Protocol();
 		byte[] buffer = this.protocol.getPacket();

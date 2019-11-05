@@ -23,26 +23,32 @@ public class Client {
         reader = socket.getInputStream();
     }
 
+    //로그인 완료 후 종료 신호
     public void stopServer() throws IOException {
         send(Protocol.PT_EXIT);
         System.out.println("클라이언트 종료");
     }
 
+    // 패킷 전송
+    // data는 code에 따라 id와 password로 구분
     public void send(int packetType, int code, String data) throws IOException {
         protocol = new Protocol(packetType, code, data);
         writer.write(protocol.getPacket());
     }
 
+    // 패킷 전송
     public void send(int packetType, int code) throws IOException {
         protocol = new Protocol(packetType, code);
         writer.write(protocol.getPacket());
     }
 
+    // 패킷 전송
     public void send(int packetType) throws IOException {
         protocol = new Protocol(packetType);
         writer.write(protocol.getPacket());
     }
 
+    //패킷 수신
     public void receive() throws IOException {
         protocol = new Protocol();
         byte[] buffer = this.protocol.getPacket();
@@ -52,6 +58,7 @@ public class Client {
         protocol.setPacket(protocolType, code, buffer);
     }
 
+    // ID 입력
     public String inputID() throws IOException {
         BufferedReader userIn = new BufferedReader(new InputStreamReader(System.in));
 
@@ -65,6 +72,7 @@ public class Client {
         return id;
     }
 
+    // PASSWORD 입력
     public String inputPW() throws IOException {
         BufferedReader userIn = new BufferedReader(new InputStreamReader(System.in));
 
@@ -93,6 +101,7 @@ public class Client {
                 client.stopServer();
                 break;
             }
+            
             switch (protocolType) {
             case Protocol.PT_REQ:
                 if (code == Protocol.PT_REQ_ID) {
