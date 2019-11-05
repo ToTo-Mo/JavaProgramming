@@ -1,5 +1,7 @@
 package Task.Login;
 
+import java.io.UnsupportedEncodingException;
+
 public class Protocol {
 	// 포로토콜 타입 변수
 	public static final int PT_UNDEFINED = -1; // 프로토콜이 지정되어 있지 않은 경우
@@ -35,9 +37,6 @@ public class Protocol {
 	public static final int LEN_CODE = 1;
 	public static final int LEN_MAX = 1000; // 최대 데이터 길이
 
-	public static int LIMIT_ID_CHECK = 3; // 최대 ID 입력 횟수
-	public static int LIMIT_PW_CHECK = 3; // 최대 PW 입력 횟수
-
 	protected int protocolType;
 	protected int code;
 	private byte[] packet; // 프로토콜과 데이터의 저장공간이 되는 바이트 배열
@@ -58,6 +57,17 @@ public class Protocol {
 		getPacket(protocolType, code);
 	}
 
+	public Protocol(int protocolType, int code,String data) {
+		this.protocolType = protocolType;
+		this.code = code;
+		getPacket(protocolType, code);
+
+		if(code == Protocol.PT_RES_ID)
+			setId(data);
+		else if(code == Protocol.PT_RES_PW)
+			setPassword(data);
+	}
+
 	// 프로토콜 타입에 따라 바이트 배열 packet의 length가 다름
 	public byte[] getPacket(int protocolType, int code) {
 		// 패킷이 없으면 새로운 공간을 생성함
@@ -65,22 +75,21 @@ public class Protocol {
 			switch (protocolType) {
 			case PT_REQ:
 				packet = new byte[LEN_PROTOCOL_TYPE + LEN_CODE];
-				packet[1] = (byte)code;
+				packet[1] = (byte) code;
 				break;
 			case PT_RES:
 				if (code == Protocol.PT_RES_ID)
 					packet = new byte[LEN_PROTOCOL_TYPE + LEN_CODE + LEN_LOGIN_ID];
 				else if (code == Protocol.PT_RES_PW)
 					packet = new byte[LEN_PROTOCOL_TYPE + LEN_CODE + LEN_LOGIN_PW];
-
-				packet[1] = (byte)code;
+					packet[1] = (byte)code;
 				break;
 			case PT_UNDEFINED:
 				packet = new byte[LEN_MAX];
 				break;
 			case PT_RESULT:
 				packet = new byte[LEN_PROTOCOL_TYPE + LEN_CODE];
-				packet[1] = (byte)code;
+				packet[1] = (byte) code;
 				break;
 			case PT_EXIT:
 				packet = new byte[LEN_PROTOCOL_TYPE];
@@ -113,9 +122,10 @@ public class Protocol {
 
 	// Default 생성자로 생성한 후 Protocol 클래스의 packet 데이터를 바꾸기 위한 메서드
 	public void setPacket(int pt, int code, byte[] buf) {
-		packet = null;
-		packet = getPacket(pt, code);
-		protocolType = pt;
+		this.packet = null;
+		this.packet = getPacket(pt, code);
+		this.protocolType = pt;
+		this.code = code;
 		System.arraycopy(buf, 0, packet, 0, packet.length);
 	}
 
