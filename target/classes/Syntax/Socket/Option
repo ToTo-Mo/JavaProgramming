@@ -1,0 +1,103 @@
+Socket과 ServerSocket 옵션
+
+옵션 설정 절차
+    클라이언트 :                            
+        Socket(no parameter)
+            |
+        소켓 옵션 설정
+            |
+        connect(SocketAddress)
+            |
+        송수신 구현부
+
+        주의 :
+            자바에서는 bind 이후에 옵션 설정을 하여도 문제가 발생하지 않음
+            하지만 c++에서는 문제가 발생할 수 있음
+            
+        예:
+            try{
+                Socket socket = new Socket();
+                socket.setTcpNoDelay(true); // 여기에 필요한 소켓 옵션 입력
+                SocketAddress address = new InetSocketAddress(“www.kumoh.ac.kr", 80);
+                socket.connect(address);
+                //연결된 소켓으로 작업 수행
+            }catch (IOException ex) {
+                System.err.println(ex);
+            }
+
+    서버 :
+        ServerSocket(no parameter)
+            |
+        소켓 옵션 설정
+            |
+        bind(SocketAddress)
+            |
+        accept()
+            |
+        송수신 구현부
+
+        주의 :
+            자바에서는 bind 이후에 옵션 설정을 하여도 문제가 발생하지 않음
+            하지만 c++에서는 문제가 발생할 수 있음
+
+        예:
+            try {
+                ServerSocket serverSocket = new ServerSocket();
+                serverSocket.setReuseAddress(true); // 여기에 필요한 소켓 옵션 입력
+                InetAddress Address = InetAddress.getLocalHost();
+                SocketAddress addr = new InetSocketAddress(Address,8000);
+                serverSocket.bind(addr);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
+옵션 메소드
+    public boolean getTcpNoDelay() throws SocketException
+    public void setTcpNoDelay(boolean on) throws SocketException
+
+    Parameter :
+        on - true to enable TCP_NODELAY, false to disable.
+
+
+    public int getSoLinger() throws SocketException
+    public void setSoLinger(boolean on, int seconds) throws SocketException
+
+    Parameter :
+        on - whether or not to linger on.
+        linger - how long to linger for, if on is true.
+
+    public void setSoLinger(boolean on, int seconds) throws SocketException
+    public int getSoLinger() throws SocketException
+
+    public void setReceiveBufferSize(int size) throws SocketException,
+    IllegalArgumentException
+    public int getReceiveBufferSize() throws SocketException
+    public void setSendBufferSize(int size) throws SocketException,
+    IllegalArgumentException
+    public int getSendBufferSize() throws SocketException
+
+    public void setKeepAlive(boolean on) throws SocketException
+    public boolean getKeepAlive() throws SocketException
+
+    public void setOOBInline(boolean on) throws SocketException
+    public boolean getOOBInline() throws SocketException
+
+    public void sendUrgentData(int data) throws IOException
+
+    public boolean getReuseAddress() throws SocketException
+    public void setReuseAddress(boolean on) throws SocketException
+
+    설명 : 
+        서버 - bind() 호출 이전에 setReuseAddress() 호출됨
+        클라이언트 - connect() 호출 이전에 setReuseAddress() 호출됨
+    Parameter :
+        True - 포트 재사용 가능, false - 포트 재사용불가
+    주의 : 
+        well-known port를 사용하는 경우 문제 발생 가능
+        단, 자바에서는 포트 재사용 설정을 안하여도 기본으로 지원함
+
+
+
+
+
+
