@@ -21,6 +21,8 @@ public class Client {
         socket = new Socket(IP, PORT);
         writer = socket.getOutputStream();
         reader = socket.getInputStream();
+
+        System.out.println("환영합니다.");
     }
 
     //로그인 완료 후 종료 신호
