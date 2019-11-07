@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SemaphoreTest",
+            "request": "launch",
+            "mainClass": "Syntax.Semaphore.SemaphoreTest",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThreadA",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.ExplicitLock.ReadWriteLock.ThreadA",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WaitNNotify",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.WaitNNotify",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrintThread",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.PrintThread",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Synchronize",
+            "request": "launch",
+            "mainClass": "Syntax.Thread.Synchronize",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - program",
+            "request": "launch",
+            "mainClass": "Syntax.Process.program",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Login.Main",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"

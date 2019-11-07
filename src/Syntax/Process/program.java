@@ -4,9 +4,9 @@ public class program {
     public static void main(String[] args) {
         try {
             String[] command = { "notepad.exe" };
-            ProcessBuilder probuilder = new ProcessBuilder(command);
+            ProcessBuilder processBuilder = new ProcessBuilder(command);
 
-            Process process = probuilder.start();
+            Process process = processBuilder.start();
             System.out.println("notepad 프로그램 실행 시작 ...");
 
             // 종료 시까지 대기

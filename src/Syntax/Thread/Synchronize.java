@@ -15,16 +15,19 @@ class SynchronizedCounter {
 
     private int c = 0;
 
-    public synchronized void increment() throws InterruptedException {
+    // stack 값의 동기화를 위해 synchronized를 통해 락을 걸음
+    public void increment(){
         c++;
+    }
 
-        Thread.sleep(1000);
+    public synchronized void increment2() {
+        c++;
     }
 
     public synchronized void decrement() throws InterruptedException {
         c--;
 
-        Thread.sleep(1000);
+        // Thread.sleep(1000);
     }
 
     public synchronized int value() {
@@ -40,15 +43,13 @@ class Producer extends Thread {
     }
 
     public void run() {
-        System.out.println("생산자");
 
-        try {
-            data.increment();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        for (int i = 0; i < 5; i++) {
+            System.out.print("생산자 : ");
+            data.increment2();
+            System.out.println(data.value());
+
         }
-        System.out.println(data.value());
     }
 }
 
@@ -60,14 +61,12 @@ class Consumer extends Thread {
     }
 
     public void run() {
-        System.out.println("소비자");
 
-        try {
-            data.increment();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        for (int i = 0; i < 5; i++) {
+            System.out.print("소비자 : ");
+            data.increment2();
+            System.out.println(data.value());
+
         }
-        System.out.println(data.value());
     }
 }
