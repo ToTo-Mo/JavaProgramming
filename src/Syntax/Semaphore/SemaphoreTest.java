@@ -4,8 +4,8 @@ import java.util.concurrent.Semaphore;
 
 public class SemaphoreTest {
 	public static void main(String[] args) {
-		final int numOfThreads = 1000;
-		final int numOfpermits = 500; //한번에 실행할 스레드 수
+		final int numOfThreads = 100;
+		final int numOfpermits = 20; //한번에 실행할 스레드 수
 		Semaphore semaphore = new Semaphore(numOfpermits, true);
 		ThreadB threads[] = new ThreadB[numOfThreads];
 		for (int i=0; i < numOfThreads; i++) {
