@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Philosopher",
+            "request": "launch",
+            "mainClass": "Task.Philosopher.Monitor.Philosopher",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Philosopher",
+            "request": "launch",
+            "mainClass": "Task.Philosopher.Philosopher",
+            "projectName": "src"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SemaphoreTest",
             "request": "launch",
             "mainClass": "Syntax.Semaphore.SemaphoreTest",
